@@ -1,0 +1,424 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    /* overflow: hidden; */
+    width: 100%;
+    margin: 0;
+    background-color: #102A2E;
+    color: #D6E4E5;
+    font-family: "Google Sans Code", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+}
+
+/* fejléc */
+
+header {
+    background-color: #071A1D;
+    color: #5EEAD4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 1px solid #24545A;
+}
+
+.bádi {
+    display: flex;
+}
+
+/* navigáció*/
+nav {
+    flex: 0 0 20%;
+    min-width: 0;
+    /* width: 20%; */
+    background-color: #0D2529;
+    color: #5EEAD4;
+    border-right: 1px solid #24545A;
+    padding-top: 20px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+nav li {
+    list-style-type: none;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+.navgomb {
+    display: block;
+    width: 90%;
+    margin: 20px auto;
+    padding: 12px;
+    background-color: #155E63;
+    color: #D6E4E5;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 10px;
+    overflow-wrap: break-word;
+    transition: all 0.3s ease;
+}
+
+.navgomb:hover {
+    background-color: #0E7490;
+}
+
+/* tartalom */
+
+.tartalom {
+    /* overflow-y: auto; */
+    flex: 1;
+    min-width: 0;
+    /* width: 80%; */
+    padding: 0 25px;
+}
+
+div {
+    background-color: #0D2529;
+    width: 80%;
+    margin: 75px auto 25px auto;
+    padding: 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 1px 1px 10px #2f666d;
+}
+
+div:hover {
+    box-shadow: 4px 4px 15px #2f666d;
+    transform: translateY(-2px);
+}
+
+.miez {
+    display: block;
+    width: calc(100% + 32px);
+    height: 250px;
+    object-fit: cover;
+    margin: -16px -16px 20px -16px;
+    border-radius: 20px 20px 0 0;
+    filter: brightness(0.5);
+}
+
+#fontoskartya {
+    display: flex;
+    padding: 0;
+    overflow: hidden;
+}
+
+.fontosszoveg {
+    width: 65%;
+    padding: 16px;
+}
+
+.fontoskep {
+    width: 35%;
+    padding: 0;
+    /* display: flex; */
+}
+
+.fontossag {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5);
+}
+
+#foglalkartya {
+    display: flex;
+    padding: 0;
+    overflow: hidden;
+}
+
+.foglalkep {
+    width: 35%;
+    padding: 0;
+}
+
+.foglalszoveg {
+    width: 65%;
+    padding: 16px;
+}
+
+.foglalkoz {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5);
+}
+
+#buncselekmenykartya {
+    display: flex;
+    padding: 0;
+    overflow: hidden;
+}
+
+.bunszoveg {
+    width: 70%;
+    padding: 16px;
+}
+
+.bunkep {
+    width: 30%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.leggyakori {
+    display: block;
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right;
+    filter: brightness(0.5);
+}
+
+#vedekez {
+    display: flex;
+    padding: 0;
+    overflow: hidden;
+}
+
+.vedekezkep {
+    width: 35%;
+    padding: 0;
+}
+
+.vedekezszoveg {
+    width: 65%;
+    padding: 16px;
+    margin-left: 20px;
+}
+
+.vedekep {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5);
+}
+
+#osszegzes {
+    display: none;
+}
+
+/* lábléc */
+
+footer {
+    background-color: #071A1D;
+    color: #5EEAD4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #24545A;
+}
+
+#hamburger {
+    display: none;
+}
+
+/* telefon */
+
+@media (max-width: 768px) {
+
+    body {
+        width: 100%;
+    }
+
+    header{
+        margin-top: 55px;
+    }
+
+    #hamburger {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 55px;
+        padding: 0;
+        border: none;
+        border-bottom: 1px solid #24545A;
+        background-color: #071A1D;
+        color: #5EEAD4;
+        font-size: 25px;
+        cursor: pointer;
+        z-index: 100;
+    }
+
+    nav {
+        display: none;
+    }
+
+    nav.megnyitva {
+        display: block;
+        position: fixed;
+        top: 55px;
+        left: 0;
+        width: 100%;
+        max-height: calc(100vh - 55px);
+        overflow-y: auto;
+        z-index: 99;
+        padding: 10px 0;
+        border-right: none;
+        border-bottom: 1px solid #24545A;
+
+    }
+
+    nav ul {
+        display: block;
+    }
+
+    nav li {
+        width: 100%;
+    }
+
+    .navgomb {
+        width: 90%;
+        margin: 8px auto;
+    }
+
+    .bádi {
+        display: block;
+    }
+
+
+    nav {
+        position: static;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #24545A;
+        padding: 10px 0;
+    }
+
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav li {
+        width: 50%;
+    }
+
+    .navgomb {
+        width: 90%;
+        margin: 8px auto;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* tartalom */
+
+    .tartalom {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    div {
+        width: 100%;
+        margin: 30px auto 20px auto;
+        padding: 12px;
+    }
+
+    /* első kép */
+
+    .miez {
+        width: calc(100% + 24px);
+        height: 180px;
+        margin: -12px -12px 15px -12px;
+    }
+
+    /* kétoszlopos kártyák */
+
+    #fontoskartya,
+    #foglalkartya,
+    #buncselekmenykartya,
+    #vedekez {
+        display: block;
+    }
+
+    .fontosszoveg,
+    .fontoskep,
+    .foglalkep,
+    .foglalszoveg,
+    .bunszoveg,
+    .bunkep,
+    .vedekezkep,
+    .vedekezszoveg {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    /* képek */
+
+    .fontossag,
+    .foglalkoz,
+    .vedekep {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+    }
+
+    .leggyakori {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .bunkep {
+        display: block;
+    }
+
+    /* szövegek */
+
+    .fontosszoveg,
+    .foglalszoveg,
+    .bunszoveg,
+    .vedekezszoveg {
+        padding: 12px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    p,
+    li {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    /* lábléc */
+
+    footer {
+        padding: 15px;
+    }
+}
